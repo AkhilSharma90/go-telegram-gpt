@@ -40,7 +40,7 @@ func sendChatGPT(apiKey, sendText string) string {
 
 	var response string
 
-	err := client.CompletionStreamWithEngine(ctx, gpt3.TextDavinci003Engine, gpt3.CompletionRequest{
+	err := client.CompletionStreamWithEngine(ctx, "gpt-3.5-turbo-instruct" , gpt3.CompletionRequest{
 		Prompt:      []string{sendText},
 		MaxTokens:   gpt3.IntPtr(100),
 		Temperature: gpt3.Float32Ptr(0),
